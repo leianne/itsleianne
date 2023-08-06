@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+a:hover {
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:visited {
+  color: hotpink
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 4em;
+  margin-top: .5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+html,
+body, *, *::before, *::after  {
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+ 
+.AboutMeContainer {
+  align-content: flex-start;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  height: 60%;
+  margin-top: 90px;
+  text-align: left;
+}
+
+.AboutMeText {
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+  margin-top: 20px;
+}
+
+.AppContainer {
+  border: yellow solid 30px;
+  display: inline-block;
+  height: 94vh;
+  overflow: hidden;
+  width: 96vw;
+}
+
+.BLMLink {
+ font-size: 1.5rem;
+ font-weight: 900;
+ text-align: right;
+}
+
+.Border {
+  border: black .15rem solid;
+}
+
+.Circle {
+  background-color: yellow;
+  border-radius: 50%;
+  bottom: 10%;
+  height: 1300px;
+  overflow: hidden;
+  position: absolute;
+  right: 50%;
+  width: 1300px;
+}
+
+.ContentContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, "Helvetica Neue";
+  height: 87.5%;
+  justify-content: space-between;
+  padding: 2rem 5rem;
+  position: absolute;
+  width: 85%;
+}
+
+.EmailLink {
+ text-decoration: underline;
+}
+
+.FooterContainer {
+  display: flex;
+  flex-direction: column;
+  height: 15%;
+  justify-content: space-between;
+}
+
+.LeftBorder {
+  border-right: black .25rem solid;
+  display: inline-flex;
+  height: 94%;
+  position: absolute;
+}
+
+.LinksContainer {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.LinksLeft {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MarginTop {
+  margin-top: 2rem;
+}
+
+.PhotoLink {
+ font-size: 1.2rem;
+ font-weight: 600;
+}
+
+.TopBorder {
+  border: black solid .30rem
 }
