@@ -1,3 +1,7 @@
+a {
+  color: blueviolet;
+}
+
 a:hover {
   cursor: pointer;
 }
@@ -16,8 +20,21 @@ body, *, *::before, *::after  {
   margin: 0;
   overflow: hidden;
   padding: 0;
+ -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
- 
+html, body {  height: 93.5vh;
+  width: 96.4vw;}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  border: aquamarine solid 30px;
+}
+
+
+
 .AboutMeContainer {
   align-content: flex-start;
   display: flex;
@@ -26,20 +43,14 @@ body, *, *::before, *::after  {
   height: 60%;
   margin-top: 90px;
   text-align: left;
+  position: absolute;
+  overflow: hidden;
 }
 
 .AboutMeText {
   font-size: 1.5rem;
   line-height: 1.9rem;
   margin-top: 20px;
-}
-
-.AppContainer {
-  border: yellow solid 30px;
-  display: inline-block;
-  height: 94vh;
-  overflow: hidden;
-  width: 96vw;
 }
 
 .BLMLink {
@@ -53,7 +64,7 @@ body, *, *::before, *::after  {
 }
 
 .Circle {
-  background-color: yellow;
+  background-color: aquamarine;
   border-radius: 50%;
   bottom: 10%;
   height: 1300px;
@@ -71,7 +82,7 @@ body, *, *::before, *::after  {
   justify-content: space-between;
   padding: 2rem 5rem;
   position: absolute;
-  width: 85%;
+  width: -webkit-fill-available;
 }
 
 .EmailLink {
@@ -79,29 +90,37 @@ body, *, *::before, *::after  {
 }
 
 .FooterContainer {
-  display: flex;
-  flex-direction: column;
-  height: 15%;
-  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 10px;
+  color: white;
+  z-index: -30;
+  border-top: black .30rem solid;
+  border-bottom: black .30rem solid;
 }
 
-.LeftBorder {
-  border-right: black .25rem solid;
+.TopBorder {
+  border-top: black .30rem solid;
   display: inline-flex;
-  height: 94%;
-  position: absolute;
+  z-index: -30;
+  width: 100%;
+  position:absolute;
 }
 
 .LinksContainer {
+
   align-items: center;
   display: flex;
+  width: 90%;
   justify-content: space-between;
 }
 
 .LinksLeft {
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 50%;
 }
 
 .MarginTop {
@@ -113,6 +132,19 @@ body, *, *::before, *::after  {
  font-weight: 600;
 }
 
-.TopBorder {
-  border: black solid .30rem
+
+@media only screen and (max-width: 600px) {
+  .AboutMeContainer {
+    height: 80%;
+    margin-top: 30px;
+  }
+
+  .ContentContainer {
+    padding: 2rem 2rem;
+  }
+
+  .LinksLeft {
+    width: 50%;
+  }
+  
 }
