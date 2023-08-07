@@ -24,7 +24,7 @@ body, *, *::before, *::after  {
   scrollbar-width: none;  /* Firefox */
 }
 html, body {  height: 93.5vh;
-  width: 96.4vw;}
+  width: 97.4vw;}
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none;
 }
@@ -64,14 +64,16 @@ body {
 }
 
 .Circle {
+  z-index: -20;
   background-color: aquamarine;
   border-radius: 50%;
   bottom: 10%;
-  height: 1300px;
+  height: 1100px;
   overflow: hidden;
   position: absolute;
-  right: 50%;
-  width: 1300px;
+  right: 60%;
+  top: -49%;
+  width: 1100px;
 }
 
 .ContentContainer {
@@ -96,7 +98,7 @@ body {
   width: 100%;
   padding: 10px 10px;
   color: white;
-  z-index: -30;
+  z-index: -15;
   border-top: black .30rem solid;
   border-bottom: black .30rem solid;
 }
@@ -114,6 +116,7 @@ body {
   align-items: center;
   display: flex;
   width: 90%;
+  z-index: 50;
   justify-content: space-between;
 }
 
