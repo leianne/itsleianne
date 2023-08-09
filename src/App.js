@@ -2,39 +2,68 @@ import "./App.css";
 
 import { BiLogoGithub, BiLogoInstagram, BiLogoLinkedin } from "react-icons/bi";
 
+import React from "react";
+
 function App() {
+  const [screenSize, setScreenSize] = React.useState(getCurrentDimension());
+
+  function getCurrentDimension() {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  }
+
+  React.useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension());
+    };
+    window.addEventListener("resize", updateDimension);
+
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  }, [screenSize]);
+
   return (
     <div className="AppContainer">
-      <div className="TopBorder" />
-      <div className="Circle" />
       <div className="ContentContainer">
         <div className="AboutMeContainer">
-          <h1>hello 👋</h1>
+          <h1>hey 👋</h1>
           <div className="AboutMeText">
-            <p>my name is leianne</p>
-            <p>i'm a software engineer, photographer,</p>
-            <p>aspiring dj and lover of the worlds possibilities.</p>
+            <p>
+              i'm leianne
+              <br />
+              a software engineer, photographer,
+              <br />
+              aspiring dj and lover of the worlds possibilities.
+            </p>
           </div>
           <div className="AboutMeText MarginTop">
-            <p>i am currently a</p>
-            <p>senior software engineer @ Cityblock Health</p>
-            <p>and previously built things @ Twitter</p>
+            <p>
+              i'm a senior software
+              <br />
+              engineer @ Cityblock Health
+              <br />
+              and previously built things @ Twitter
+            </p>
           </div>
           <p className="AboutMeText MarginTop">
-            don't be shy,
+            message me,{" "}
             <a className="EmailLink" href="mailto: leiannelearns@gmail.com">
-              say hi
+              say hey
             </a>
           </p>
+          <a
+            className="BLMLink"
+            href="https://blacklivesmatter.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            BLM
+          </a>
         </div>
-        <a
-          className="BLMLink"
-          href="https://blacklivesmatter.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          BLM
-        </a>
+
         <div className="FooterContainer">
           <div className="LinksContainer">
             <div className="LinksLeft">
@@ -43,21 +72,23 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <BiLogoGithub size="3em" />
+                <BiLogoGithub size={screenSize.width > 600 ? "3em" : "2em"} />
               </a>
               <a
                 href="https://linkedin.com/in/leiannelouis/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <BiLogoLinkedin size="3em" />
+                <BiLogoLinkedin size={screenSize.width > 600 ? "3em" : "2em"} />
               </a>
               <a
                 href="https://instagram.com/__leianne_"
                 target="_blank"
                 rel="noreferrer"
               >
-                <BiLogoInstagram size="3em" />
+                <BiLogoInstagram
+                  size={screenSize.width > 600 ? "3em" : "2em"}
+                />
               </a>
             </div>
             <a
